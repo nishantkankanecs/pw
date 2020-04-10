@@ -7,6 +7,6 @@ let vapIDkeys = {
 
 push.setVapidDetails("mailto:nishant.gupta.2@alight.com", vapIDkeys.publicKey, vapIDkeys.privateKey)
 
-let sub = {}
+let sub = { "endpoint": "https://fcm.googleapis.com/fcm/send/e3ko2Dwxtz8:APA91bGQmRSjsfGcbA42iDU2wVOIuw1XcmQTX4GvIYS6YHzkPQIdEsv4-iF_kDtpWmqoXmXrB3yKkT-h9js2cbINTC0Ckju1CO1VGFeHOgWT6yn7JEmvF5Yh8jRSHbUmboScrJANNVvO", "expirationTime": null, "keys": { "p256dh": "BDI0z8_lQV8zJpXZBNQxlGxYRpeeJJuVKb8mfmsVQnYToUEdRPgDmnPbx7mzcUpmqb9k9qHd_LSV7VdBQIpTDVA", "auth": "0-zvxd7GFbgyFNQ63zV2ig" } }
 
 push.sendNotification(sub, "test message")
