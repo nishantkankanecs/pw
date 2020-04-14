@@ -7,15 +7,13 @@ self.addEventListener('push', function (e) {
             dateOfArrival: Date.now(),
             primaryKey: '2'
         },
-        actions: [
-            {
+        actions: [{
                 action: 'explore', title: 'Explore this new world',
                 icon: 'images/checkmark.png'
-            },
-            {
+            },{
                 action: 'close', title: 'Close',
                 icon: 'images/xmark.png'
-            },
+            }
         ]
     };
     e.waitUntil(

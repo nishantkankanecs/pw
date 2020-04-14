@@ -21,12 +21,27 @@
         let sw = await navigator.serviceWorker.ready;
         let push = await sw.pushManager.subscribe({
             userVisibleOnly: true,
-            applicationServerKey: "BJqFTPFqyGonWh7aCsko1VU6Leaa9xWtaM_E05leDeXz3xp0yhb_B2LCvq9xcQHOJjEXP7pn2H5_HKRoNjbBzdE"
+            applicationServerKey: urlBase64ToUint8Array("BJqFTPFqyGonWh7aCsko1VU6Leaa9xWtaM_E05leDeXz3xp0yhb_B2LCvq9xcQHOJjEXP7pn2H5_HKRoNjbBzdE")
         })
 
         console.log(JSON.stringify(push));
     }
 
+
+    function urlBase64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding)
+            .replace(/-/g, '+')
+            .replace(/_/g, '/');
+        
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+        
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
+    }
 </script>
 
 </body>
